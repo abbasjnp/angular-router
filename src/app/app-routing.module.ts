@@ -7,6 +7,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 
 const appRoutes : Routes =[
   //{path:'heroes', component:HeroListComponent},
+  {path:'home',loadChildren:'./heroes/heroes.module#HeroesModule'},
   {path:'crisis',component:CrisisListComponent},
   {path:'', redirectTo:'/heroes',pathMatch:'full'},
   {path:'**',component:PageNotFoundComponent}

@@ -3,6 +3,7 @@ import { Hero } from '../hero';
 import{Router,ActivatedRoute,ParamMap} from  '@angular/router'
 import{switchMap} from 'rxjs/operators'
 import { HeroService } from '../hero.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-hero-detail',
@@ -10,8 +11,7 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-
-  @Input() hero: Hero;
+ hero$:Observable<Hero>;
 
   constructor(
       private router:Router,
@@ -20,6 +20,9 @@ export class HeroDetailComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    let id = this.route.snapshot.paramMap.get('id');
+
+    this.hero$ = this.service.getHero(id);
   }
 
 }

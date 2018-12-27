@@ -8,6 +8,9 @@ import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesModule } from './heroes/heroes.module';
+import { CrisisCenterComponent } from './crisis-center/crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './crisis-center/crisis-center-home/crisis-center-home.component';
+import { CrisisCenterModule } from './crisis-center.module';
 
 
 @NgModule({
@@ -15,13 +18,16 @@ import { HeroesModule } from './heroes/heroes.module';
     AppComponent,
     CrisisListComponent,
     //HeroListComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CrisisCenterComponent,
+    CrisisCenterHomeComponent
   ],
   imports: [
     BrowserModule,
     //RouterModule.forRoot(appRoutes),
     AppRoutingModule,
-    HeroesModule
+    HeroesModule,
+    CrisisCenterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
